@@ -26,8 +26,8 @@ pub fn update(command: Command) -> CoreOp {
         let args: UpdateArgs = serde_json::from_slice(data.unwrap().as_ref()).unwrap();
         let db_name = args.db_name;
         let collection_name = args.collection_name;
-        let query_doc = util::json_to_document(args.query).expect("query canot be null");
-        let update_doc = util::json_to_document(args.update).expect("update_doc canot be null");
+        let query_doc = util::json_to_document(args.query).expect("query cannot be null");
+        let update_doc = util::json_to_document(args.update).expect("update_doc cannot be null");
         let database = client.database(&db_name);
         let collection = database.collection(&collection_name);
 
